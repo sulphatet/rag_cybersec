@@ -1,0 +1,365 @@
+[
+ {
+  "qid": "CV-score-9781",
+  "category": "cve_fact",
+  "query": "What CVSS v3.1 base score and severity did NVD assign to CVE-2019-19781?",
+  "expected_route": "answerable",
+  "expected_behaviour": "answer",
+  "gold": [
+   [
+    "CVE-2019-19781",
+    "Severity"
+   ]
+  ],
+  "must_contain": [
+   "9.8 CRITICAL"
+  ],
+  "gold_answer": "9.8 CRITICAL",
+  "notes": "auto: NVD primary v3.1 score+severity (deterministic gold)"
+ },
+ {
+  "qid": "CV-score-3209",
+  "category": "cve_fact",
+  "query": "What CVSS v3.1 base score and severity did NVD assign to CVE-2025-23209?",
+  "expected_route": "answerable",
+  "expected_behaviour": "answer",
+  "gold": [
+   [
+    "CVE-2025-23209",
+    "Severity"
+   ]
+  ],
+  "must_contain": [
+   "8.1 HIGH"
+  ],
+  "gold_answer": "8.1 HIGH",
+  "notes": "auto: NVD primary v3.1 score+severity (deterministic gold)"
+ },
+ {
+  "qid": "CV-score-8639",
+  "category": "cve_fact",
+  "query": "What CVSS v3.1 base score and severity did NVD assign to CVE-2018-8639?",
+  "expected_route": "answerable",
+  "expected_behaviour": "answer",
+  "gold": [
+   [
+    "CVE-2018-8639",
+    "Severity"
+   ]
+  ],
+  "must_contain": [
+   "7.8 HIGH"
+  ],
+  "gold_answer": "7.8 HIGH",
+  "notes": "auto: NVD primary v3.1 score+severity (deterministic gold)"
+ },
+ {
+  "qid": "CV-score-8243",
+  "category": "cve_fact",
+  "query": "What CVSS v3.1 base score and severity did NVD assign to CVE-2020-8243?",
+  "expected_route": "answerable",
+  "expected_behaviour": "answer",
+  "gold": [
+   [
+    "CVE-2020-8243",
+    "Severity"
+   ]
+  ],
+  "must_contain": [
+   "7.2 HIGH"
+  ],
+  "gold_answer": "7.2 HIGH",
+  "notes": "auto: NVD primary v3.1 score+severity (deterministic gold)"
+ },
+ {
+  "qid": "CV-cwe-6290",
+  "category": "cve_fact",
+  "query": "Which CWE did NVD assign to CVE-2026-56290?",
+  "expected_route": "answerable",
+  "expected_behaviour": "answer",
+  "gold": [
+   [
+    "CVE-2026-56290",
+    "Weakness"
+   ]
+  ],
+  "must_contain": [
+   "CWE-434"
+  ],
+  "gold_answer": "CWE-434",
+  "notes": "auto: NVD CWE (deterministic gold)"
+ },
+ {
+  "qid": "CV-cwe-1603",
+  "category": "cve_fact",
+  "query": "Which CWE did NVD assign to CVE-2026-1603?",
+  "expected_route": "answerable",
+  "expected_behaviour": "answer",
+  "gold": [
+   [
+    "CVE-2026-1603",
+    "Weakness"
+   ]
+  ],
+  "must_contain": [
+   "CWE-306"
+  ],
+  "gold_answer": "CWE-306",
+  "notes": "auto: NVD CWE (deterministic gold)"
+ },
+ {
+  "qid": "CV-cwe-7483",
+  "category": "cve_fact",
+  "query": "Which CWE did NVD assign to CVE-2019-7483?",
+  "expected_route": "answerable",
+  "expected_behaviour": "answer",
+  "gold": [
+   [
+    "CVE-2019-7483",
+    "Weakness"
+   ]
+  ],
+  "must_contain": [
+   "CWE-22"
+  ],
+  "gold_answer": "CWE-22",
+  "notes": "auto: NVD CWE (deterministic gold)"
+ },
+ {
+  "qid": "CV-vec-8595",
+  "category": "cve_fact",
+  "query": "What is the NVD CVSS v3.1 vector string for CVE-2025-48595?",
+  "expected_route": "answerable",
+  "expected_behaviour": "answer",
+  "gold": [
+   [
+    "CVE-2025-48595",
+    "Severity"
+   ]
+  ],
+  "must_contain": [
+   "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+  ],
+  "gold_answer": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "notes": "auto: NVD v3.1 vector (deterministic gold)"
+ },
+ {
+  "qid": "CV-vec-4849",
+  "category": "cve_fact",
+  "query": "What is the NVD CVSS v3.1 vector string for CVE-2026-64849?",
+  "expected_route": "answerable",
+  "expected_behaviour": "answer",
+  "gold": [
+   [
+    "CVE-2026-64849",
+    "Severity"
+   ]
+  ],
+  "must_contain": [
+   "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:L/A:N"
+  ],
+  "gold_answer": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:L/A:N",
+  "notes": "auto: NVD v3.1 vector (deterministic gold)"
+ },
+ {
+  "qid": "CV-kev-8703",
+  "category": "cve_fact",
+  "query": "By what date did CISA require federal agencies to remediate CVE-2025-48703?",
+  "expected_route": "answerable",
+  "expected_behaviour": "answer",
+  "gold": [
+   [
+    "CVE-2025-48703",
+    "CISA KEV"
+   ]
+  ],
+  "must_contain": [
+   "2025-11-25"
+  ],
+  "gold_answer": "2025-11-25",
+  "notes": "auto: CISA KEV action-due date (deterministic gold)"
+ },
+ {
+  "qid": "CV-kev-1215",
+  "category": "cve_fact",
+  "query": "By what date did CISA require federal agencies to remediate CVE-2019-1215?",
+  "expected_route": "answerable",
+  "expected_behaviour": "answer",
+  "gold": [
+   [
+    "CVE-2019-1215",
+    "CISA KEV"
+   ]
+  ],
+  "must_contain": [
+   "2022-05-03"
+  ],
+  "gold_answer": "2022-05-03",
+  "notes": "auto: CISA KEV action-due date (deterministic gold)"
+ },
+ {
+  "qid": "CV-aff-1391",
+  "category": "cve_fact",
+  "query": "According to its NVD record, up to which version is Windows 10 Version 1507 affected by CVE-2025-21391?",
+  "expected_route": "answerable",
+  "expected_behaviour": "answer",
+  "gold": [
+   [
+    "CVE-2025-21391",
+    "Affected Versions"
+   ]
+  ],
+  "must_contain": [
+   "10.0.10240.20915"
+  ],
+  "gold_answer": "10.0.10240.20915",
+  "notes": "auto: NVD affected-version upper bound (deterministic gold)"
+ },
+ {
+  "qid": "CV-conflict-0269",
+  "category": "source_conflict",
+  "query": "For CVE-2023-20269, do the CNA and NVD agree on the CWE classification? Give both.",
+  "expected_route": "answerable",
+  "expected_behaviour": "answer",
+  "gold": [
+   [
+    "CVE-2023-20269",
+    "Weakness"
+   ]
+  ],
+  "must_contain": [
+   "CWE-288",
+   "CWE-863"
+  ],
+  "gold_answer": "CWE-288; CWE-863",
+  "notes": "auto: cross-source CWE conflict (deterministic gold)"
+ },
+ {
+  "qid": "CV-conflict-2963",
+  "category": "source_conflict",
+  "query": "For CVE-2022-22963, do the CNA and NVD agree on the CWE classification? Give both.",
+  "expected_route": "answerable",
+  "expected_behaviour": "answer",
+  "gold": [
+   [
+    "CVE-2022-22963",
+    "Weakness"
+   ]
+  ],
+  "must_contain": [
+   "CWE-917",
+   "CWE-94"
+  ],
+  "gold_answer": "CWE-917; CWE-94",
+  "notes": "auto: cross-source CWE conflict (deterministic gold)"
+ },
+ {
+  "qid": "CV-conflict-3692",
+  "category": "source_conflict",
+  "query": "For CVE-2024-23692, do the CNA and NVD agree on the CWE classification? Give both.",
+  "expected_route": "answerable",
+  "expected_behaviour": "answer",
+  "gold": [
+   [
+    "CVE-2024-23692",
+    "Weakness"
+   ]
+  ],
+  "must_contain": [
+   "CWE-1336",
+   "CWE-94"
+  ],
+  "gold_answer": "CWE-1336; CWE-94",
+  "notes": "auto: cross-source CWE conflict (deterministic gold)"
+ },
+ {
+  "qid": "CV-desc-8651",
+  "category": "cve_desc",
+  "query": "A vulnerability is described as follows. Which CWE weakness does NVD assign to it?\n\n\"Integer overflow in Adobe Flash Player before 18.0.0.324 and 19.x and 20.x before 20.0.0.267 on Windows and OS X and before 11.2.202.559 on Linux, Adobe AIR before 20.0.0.233, Adobe AIR SDK before 20.0.0.233, and Adobe AIR SDK & Compiler before 20.0.0.233 allows attackers to execute arbitrary code via unspecified vectors.\"",
+  "expected_route": "answerable",
+  "expected_behaviour": "answer",
+  "gold": [
+   [
+    "CVE-2015-8651",
+    "Weakness"
+   ]
+  ],
+  "must_contain": [
+   "CWE-190"
+  ],
+  "gold_answer": "CWE-190",
+  "notes": "auto: description-based, ID-free (hard retrieval); deterministic CWE gold"
+ },
+ {
+  "qid": "CV-desc-8809",
+  "category": "cve_desc",
+  "query": "A vulnerability is described as follows. Which CWE weakness does NVD assign to it?\n\n\"The default server implementation of TIBCO Software Inc.'s TIBCO JasperReports Library, TIBCO JasperReports Library Community Edition, TIBCO JasperReports Library for ActiveMatrix BPM, TIBCO JasperReports Server, TIBCO JasperReports Server Community Edition, TIBCO JasperReports Server for ActiveMatrix BPM, TIBCO Jaspersoft for AWS with Multi-Tenancy, and TIBCO Jaspersoft Reporting and Analytics fo\"",
+  "expected_route": "answerable",
+  "expected_behaviour": "answer",
+  "gold": [
+   [
+    "CVE-2018-18809",
+    "Weakness"
+   ]
+  ],
+  "must_contain": [
+   "CWE-22"
+  ],
+  "gold_answer": "CWE-22",
+  "notes": "auto: description-based, ID-free (hard retrieval); deterministic CWE gold"
+ },
+ {
+  "qid": "CV-desc-2586",
+  "category": "cve_desc",
+  "query": "A vulnerability is described as follows. Which CWE weakness does NVD assign to it?\n\n\"It was discovered that a nft object or expression could reference a nft set on a different nft table, leading to a use-after-free once that table was deleted.\"",
+  "expected_route": "answerable",
+  "expected_behaviour": "answer",
+  "gold": [
+   [
+    "CVE-2022-2586",
+    "Weakness"
+   ]
+  ],
+  "must_contain": [
+   "CWE-416"
+  ],
+  "gold_answer": "CWE-416",
+  "notes": "auto: description-based, ID-free (hard retrieval); deterministic CWE gold"
+ },
+ {
+  "qid": "CV-desc-9105",
+  "category": "cve_desc",
+  "query": "A vulnerability is described as follows. Which CWE weakness does NVD assign to it?\n\n\"An issue was discovered in ownCloud owncloud/core before 10.13.1. An attacker can access, modify, or delete any file without authentication if the username of a victim is known, and the victim has no signing-key configured. This occurs because pre-signed URLs can be accepted even when no signing-key is configured for the owner of the files. The earliest affected version is 10.6.0.\"",
+  "expected_route": "answerable",
+  "expected_behaviour": "answer",
+  "gold": [
+   [
+    "CVE-2023-49105",
+    "Weakness"
+   ]
+  ],
+  "must_contain": [
+   "CWE-287"
+  ],
+  "gold_answer": "CWE-287",
+  "notes": "auto: description-based, ID-free (hard retrieval); deterministic CWE gold"
+ },
+ {
+  "qid": "CV-desc-8373",
+  "category": "cve_desc",
+  "query": "A vulnerability is described as follows. Which CWE weakness does NVD assign to it?\n\n\"A remote code execution vulnerability exists in the way that the scripting engine handles objects in memory in Internet Explorer, aka \"Scripting Engine Memory Corruption Vulnerability.\" This affects Internet Explorer 9, Internet Explorer 11, Internet Explorer 10. This CVE ID is unique from CVE-2018-8353, CVE-2018-8355, CVE-2018-8359, CVE-2018-8371, CVE-2018-8372, CVE-2018-8385, CVE-2018-8389, CVE-\"",
+  "expected_route": "answerable",
+  "expected_behaviour": "answer",
+  "gold": [
+   [
+    "CVE-2018-8373",
+    "Weakness"
+   ]
+  ],
+  "must_contain": [
+   "CWE-787"
+  ],
+  "gold_answer": "CWE-787",
+  "notes": "auto: description-based, ID-free (hard retrieval); deterministic CWE gold"
+ }
+]

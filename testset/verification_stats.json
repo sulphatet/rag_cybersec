@@ -1,0 +1,246 @@
+{
+ "n_items": 62,
+ "dry_run": 0,
+ "tier1": {
+  "pass": 51,
+  "fail": []
+ },
+ "tier2": {
+  "candidates": 34,
+  "ran": 34,
+  "fail": []
+ },
+ "tier3_microgold": {
+  "confusion": {
+   "tp": 20,
+   "tn": 17,
+   "fp": 3,
+   "fn": 0
+  },
+  "accuracy": 0.925,
+  "n_pairs": 40
+ },
+ "worker_neurons": 787.25,
+ "microgold_detail": [
+  {
+   "qid": "G2",
+   "kind": "genuine",
+   "supported": true
+  },
+  {
+   "qid": "G2",
+   "kind": "corrupted",
+   "strategy": "negate",
+   "supported": true
+  },
+  {
+   "qid": "C-aq24397",
+   "kind": "genuine",
+   "supported": true
+  },
+  {
+   "qid": "C-aq24397",
+   "kind": "corrupted",
+   "strategy": "negate",
+   "supported": false
+  },
+  {
+   "qid": "CV-aff-1391",
+   "kind": "genuine",
+   "supported": true
+  },
+  {
+   "qid": "CV-aff-1391",
+   "kind": "corrupted",
+   "strategy": "number_change:10.0->11.0",
+   "supported": false
+  },
+  {
+   "qid": "CV-kev-8703",
+   "kind": "genuine",
+   "supported": true
+  },
+  {
+   "qid": "CV-kev-8703",
+   "kind": "corrupted",
+   "strategy": "number_change:2025->2026",
+   "supported": false
+  },
+  {
+   "qid": "CV-kev-1215",
+   "kind": "genuine",
+   "supported": true
+  },
+  {
+   "qid": "CV-kev-1215",
+   "kind": "corrupted",
+   "strategy": "number_change:2022->2023",
+   "supported": false
+  },
+  {
+   "qid": "B-aq1916",
+   "kind": "genuine",
+   "supported": true
+  },
+  {
+   "qid": "B-aq1916",
+   "kind": "corrupted",
+   "strategy": "number_change:2021->2022",
+   "supported": false
+  },
+  {
+   "qid": "B-aq5913",
+   "kind": "genuine",
+   "supported": true
+  },
+  {
+   "qid": "B-aq5913",
+   "kind": "corrupted",
+   "strategy": "negate",
+   "supported": false
+  },
+  {
+   "qid": "CV-cwe-6290",
+   "kind": "genuine",
+   "supported": true
+  },
+  {
+   "qid": "CV-cwe-6290",
+   "kind": "corrupted",
+   "strategy": "negate",
+   "supported": false
+  },
+  {
+   "qid": "A-aq13024",
+   "kind": "genuine",
+   "supported": true
+  },
+  {
+   "qid": "A-aq13024",
+   "kind": "corrupted",
+   "strategy": "number_change:002->3",
+   "supported": false
+  },
+  {
+   "qid": "CV-desc-9105",
+   "kind": "genuine",
+   "supported": true
+  },
+  {
+   "qid": "CV-desc-9105",
+   "kind": "corrupted",
+   "strategy": "id_swap:CWE-287->CWE-294",
+   "supported": false
+  },
+  {
+   "qid": "CV-vec-4849",
+   "kind": "genuine",
+   "supported": true
+  },
+  {
+   "qid": "CV-vec-4849",
+   "kind": "corrupted",
+   "strategy": "negate",
+   "supported": false
+  },
+  {
+   "qid": "A-aq14592",
+   "kind": "genuine",
+   "supported": true
+  },
+  {
+   "qid": "A-aq14592",
+   "kind": "corrupted",
+   "strategy": "negate",
+   "supported": false
+  },
+  {
+   "qid": "B-aq968",
+   "kind": "genuine",
+   "supported": true
+  },
+  {
+   "qid": "B-aq968",
+   "kind": "corrupted",
+   "strategy": "negate",
+   "supported": false
+  },
+  {
+   "qid": "CV-score-8243",
+   "kind": "genuine",
+   "supported": true
+  },
+  {
+   "qid": "CV-score-8243",
+   "kind": "corrupted",
+   "strategy": "number_change:7.2->8.2",
+   "supported": false
+  },
+  {
+   "qid": "E4",
+   "kind": "genuine",
+   "supported": true
+  },
+  {
+   "qid": "E4",
+   "kind": "corrupted",
+   "strategy": "negate",
+   "supported": false
+  },
+  {
+   "qid": "D2",
+   "kind": "genuine",
+   "supported": true
+  },
+  {
+   "qid": "D2",
+   "kind": "corrupted",
+   "strategy": "negate",
+   "supported": false
+  },
+  {
+   "qid": "CV-desc-8373",
+   "kind": "genuine",
+   "supported": true
+  },
+  {
+   "qid": "CV-desc-8373",
+   "kind": "corrupted",
+   "strategy": "number_change:787->788",
+   "supported": false
+  },
+  {
+   "qid": "H1",
+   "kind": "genuine",
+   "supported": true
+  },
+  {
+   "qid": "H1",
+   "kind": "corrupted",
+   "strategy": "number_change:06->7",
+   "supported": false
+  },
+  {
+   "qid": "CV-score-8639",
+   "kind": "genuine",
+   "supported": true
+  },
+  {
+   "qid": "CV-score-8639",
+   "kind": "corrupted",
+   "strategy": "negate",
+   "supported": true
+  },
+  {
+   "qid": "CV-conflict-0269",
+   "kind": "genuine",
+   "supported": true
+  },
+  {
+   "qid": "CV-conflict-0269",
+   "kind": "corrupted",
+   "strategy": "negate",
+   "supported": true
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "seed": 1,
+ "total": 62,
+ "by_category": {
+  "lookup_id": 4,
+  "lookup_nl": 6,
+  "aggregate": 3,
+  "multihop": 4,
+  "confusability": 4,
+  "cve_fact": 17,
+  "source_conflict": 5,
+  "nist": 3,
+  "near_miss": 5,
+  "out_of_scope": 2,
+  "ambiguous": 2,
+  "dual_use": 2,
+  "cve_desc": 5
+ },
+ "by_expected_behaviour": {
+  "answer": 51,
+  "abstain": 7,
+  "clarify": 2,
+  "refuse": 2
+ },
+ "tactics_covered": [
+  "Command and Control",
+  "Discovery",
+  "Impact",
+  "Initial Access",
+  "Lateral Movement",
+  "Persistence",
+  "Privilege Escalation",
+  "Stealth"
+ ],
+ "n_tactics": 8,
+ "answerable_with_gold": 51,
+ "abstain_clarify_refuse": 11
+}
