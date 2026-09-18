@@ -1,0 +1,16 @@
+# data pipeline
+requests>=2.32
+python-dotenv>=1.0
+pandas>=2.2
+pyarrow>=17
+pdfplumber>=0.11
+# runtime: retrieval
+torch>=2.2
+sentence-transformers>=3.0
+faiss-cpu>=1.8
+rank-bm25>=0.2.2
+# runtime: orchestration
+langgraph>=0.2
+langchain-core>=0.3
+# runtime: verification
+lettucedetect>=0.1.4
