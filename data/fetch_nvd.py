@@ -22,6 +22,7 @@ from __future__ import annotations
 import argparse
 import json
 import random
+from pathlib import Path
 
 from .common import RAW, NvdClient
 
@@ -42,6 +43,10 @@ NAMED = {
 }
 
 NVD_DIR = RAW / "nvd"
+# Committed selection of the 300 CVE ids (id -> reason). Lets a source-only clone
+# reproduce the exact CVE slice by fetching each record by id, without shipping the
+# bulk NVD/KEV pool dumps. Regenerated whenever the pool-based selection is re-run.
+MANIFEST = Path(__file__).with_name("cve_manifest.json")
 
 
 def v31_entries(cve: dict):
@@ -131,6 +136,25 @@ def main():
         take(cve, f"named:{nick}")
         if args.limit and len(selected) >= args.limit:
             break
+
+    # Source-only reproduction: no bulk pool cached, so rebuild the exact selection
+    # from the committed manifest by fetching each record by id (stable NVD data).
+    if not pool and not args.limit and MANIFEST.exists():
+        manifest = json.load(open(MANIFEST))
+        print(f"no bulk pool cached; reproducing {len(manifest)} CVEs from {MANIFEST.name}")
+        for cid, reason in manifest.items():
+            if cid in selected:
+                continue
+            cache = NVD_DIR / f"{cid}.json"
+            if cache.exists():
+                cve = json.load(open(cache))
+                if "vulnerabilities" in cve:
+                    cve = cve["vulnerabilities"][0]["cve"]
+            else:
+                cve = client.cve(cid)
+                print(f"fetched {cid}")
+            json.dump(cve, open(cache, "w"))
+            take(cve, reason)
 
     if not args.limit:
         # 2. conflict
