@@ -18,14 +18,6 @@ hosted Cloudflare Worker (Workers AI). The rest of the pipeline is identical eit
 
 ## Architecture
 
-```
-input ──▶ Router ──▶ Retriever ──▶ Generator ──▶ Verifier ──▶ answer (+citations)
-           │                                          │
-           │ (scope: answerable / ambiguous /         │ (fail → one revision → re-check;
-           │  out-of-scope; + safety on every input)  │  second failure → abstain)
-           └─▶ clarify / abstain / refuse
-```
-
 - **Router** — classifies the input as answerable, ambiguous, or out of scope (one LLM call), and a
   separate safety call runs on *every* input to catch unsafe requests. In-scope inputs go to retrieval;
   the rest return clarification, abstention, or refusal.
@@ -54,8 +46,6 @@ The KB is not committed; build it from the authoritative sources (needs network 
 ./scripts/build_kb.sh            # fetch ATT&CK / NVD / NIST -> render -> chunk -> kb/chunks.jsonl
 ```
 
-KB pages are **deterministic renderings** of source fields (STIX relationship joins + light
-normalisation), not new text — which is what lets gold facts be checked against them by exact match.
 The test set (`testset/queries.jsonl`, `gold.jsonl`) is already committed; regenerating it additionally
 requires the AttackQA dataset (see `scripts/build_kb.sh`).
 
