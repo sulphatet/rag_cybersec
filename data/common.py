@@ -124,9 +124,13 @@ class NvdClient:
         self._last = time.time()
 
     def get(self, **params) -> dict:
-        for attempt in range(4):
+        for attempt in range(5):
             self._throttle()
-            r = requests.get(NVD_URL, params=params, timeout=60)
+            try:
+                r = requests.get(NVD_URL, params=params, timeout=60)
+            except requests.exceptions.RequestException:
+                time.sleep(5 * (attempt + 1))     # transient network error (timeout/reset): back off
+                continue
             if r.status_code == 200:
                 return r.json()
             if r.status_code in (403, 429, 503):

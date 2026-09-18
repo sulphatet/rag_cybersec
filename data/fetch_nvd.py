@@ -142,19 +142,27 @@ def main():
     if not pool and not args.limit and MANIFEST.exists():
         manifest = json.load(open(MANIFEST))
         print(f"no bulk pool cached; reproducing {len(manifest)} CVEs from {MANIFEST.name}")
+        missing = []
         for cid, reason in manifest.items():
             if cid in selected:
                 continue
             cache = NVD_DIR / f"{cid}.json"
-            if cache.exists():
-                cve = json.load(open(cache))
-                if "vulnerabilities" in cve:
-                    cve = cve["vulnerabilities"][0]["cve"]
-            else:
-                cve = client.cve(cid)
-                print(f"fetched {cid}")
+            try:
+                if cache.exists():
+                    cve = json.load(open(cache))
+                    if "vulnerabilities" in cve:
+                        cve = cve["vulnerabilities"][0]["cve"]
+                else:
+                    cve = client.cve(cid)
+                    print(f"fetched {cid}")
+            except Exception as e:                # transient failure: skip; a re-run resumes from cache
+                missing.append(cid)
+                print(f"  !! {cid}: {type(e).__name__}; skipping (re-run to resume)")
+                continue
             json.dump(cve, open(cache, "w"))
             take(cve, reason)
+        if missing:
+            print(f"{len(missing)} CVEs not yet fetched; re-run `python -m data.fetch_nvd` to complete them.")
 
     if not args.limit:
         # 2. conflict
