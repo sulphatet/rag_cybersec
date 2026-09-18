@@ -13,7 +13,7 @@ hosted Cloudflare Worker (Workers AI). The rest of the pipeline is identical eit
 
 1. Ideation & Literature Review: I led the ideation phase and utilized Claude Sonnet to retrieve relevant literature for my review.
 2. System Specification: I authored a formal design document outlining the system architecture. 
-3. Experimentation & Evaluation: I deployed Claude Sonnet to execute the experimental framework defined in the design document, and utilized Claude 3 Opus to cross-validate the results against the system specifications.
+3. Experimentation & Evaluation: I deployed Claude Sonnet to execute the experimental framework defined in the design document, and utilized Claude 3 Opus to cross-validate the results against the system specifications. Experimental outputs and logs were further appended to specific markdown files for my monitoring per my specifications.
 4. Finally, I manually verified the code and experimental outputs before publishing the codebase and drafting the findings, utilizing Codex for grammatical refinement.
 
 ## Architecture
