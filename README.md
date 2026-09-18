@@ -99,13 +99,42 @@ carry 95% Wilson intervals.
 ## Repository map
 
 ```
-data/        knowledge-base + test-set construction (fetch, render, chunk, build, verify)
-rag/         the multi-agent pipeline (router, retriever, generator, verifier, graph, index, run)
-eval/        evaluation (retrieval, correctness, behaviour, ablation, Wilson intervals)
-worker/      Cloudflare Worker for the hosted backend (worker.ts)
-testset/     the test queries and system outputs (deliverable)
-scripts/     build_kb.sh, run_eval.sh
+data/     Knowledge base + test-set construction  (report: Methodology)
+          fetch_attack/nist/nvd.py  fetch the three sources
+          render_attack/cve/nist.py  render STIX/NVD/NIST records to Markdown (relationship joins)
+          chunk.py  split into section passages     cve_manifest.json  the 300 selected CVE ids
+          build_testset.py · gen_cve_questions.py · attackqa_filter.py · verify_gold.py · stats.py
+rag/      The four agents + orchestration          (report: Problem and System Design, Fig. 1)
+          router.py · retriever.py · generator.py · verifier.py   graph.py  shared-state pipeline
+          index.py  hybrid dense+BM25 index         run.py  run the pipeline
+          baseline.py · ablate.py  ablation variants   config.py · state.py · llm.py · selftest.py
+eval/     Evaluation                                (report: Results, Tables I–III)
+          evaluate.py + report.py  retrieval / behaviour / cost   correctness.py  answer-vs-gold
+          ablate_compare.py  component ablation      model_compare.py  local-vs-hosted   wilson.py
+worker/   worker.ts   Cloudflare Worker for the hosted backend  (report: Model comparison)
+testset/  queries.jsonl · gold.jsonl   the 62 queries + gold
+          outputs.md · outputs.jsonl   the system outputs  (deliverable)
+scripts/  build_kb.sh · run_eval.sh
 ```
+
+## Where each part of the report lives
+
+With the report open alongside the code:
+
+| In the report | In this repo |
+|---|---|
+| Four-agent design, Fig. 1 | `rag/graph.py` + `rag/{router,retriever,generator,verifier}.py` |
+| Hybrid retrieval + Reciprocal Rank Fusion | `rag/index.py`, `rag/retriever.py` |
+| Verification (exact-value + LettuceDetect + citation gate) | `rag/verifier.py` |
+| Knowledge base (2,256 documents / 9,091 passages; 300 CVEs) | `data/render_*.py`, `data/chunk.py`; CVE slice: `data/fetch_nvd.py` + `data/cve_manifest.json` |
+| Benchmark inspection + test set (62 queries, categories A–L) | `data/attackqa_filter.py`, `testset/queries.jsonl` (`category` field) |
+| Table I — per-category recall / action | `eval/evaluate.py` over `runs/` + `testset/gold.jsonl` |
+| Table II — component ablation | `rag/ablate.py` + `eval/ablate_compare.py` |
+| Table III — local vs. hosted backend | `eval/model_compare.py` (hosted backend = `worker/worker.ts`) |
+| Answer correctness vs. gold, and the H2 case | `eval/correctness.py` |
+| Test queries and their outputs (deliverable) | `testset/queries.jsonl`, `testset/outputs.md` |
+
+The report PDF is submitted separately and is not included here.
 
 ## Data sources and licences
 
