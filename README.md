@@ -9,6 +9,13 @@ verification stage that gates every answer before release — not merely prompte
 The generation backend is **pluggable**: a self-hosted local model (`llama.cpp`, no API cost) or a
 hosted Cloudflare Worker (Workers AI). The rest of the pipeline is identical either way.
 
+## Methodology I Followed:
+
+1. Ideation & Literature Review: I led the ideation phase and utilized Claude Sonnet to retrieve relevant literature for my review.
+2. System Specification: I authored a formal design document outlining the system architecture. 
+3. Experimentation & Evaluation: I deployed Claude Sonnet to execute the experimental framework defined in the design document, and utilized Claude 3 Opus to cross-validate the results against the system specifications.
+4. Finally, I manually verified the code and experimental outputs before publishing the codebase and drafting the findings, utilizing Codex for grammatical refinement.
+
 ## Architecture
 
 ```
@@ -151,5 +158,4 @@ The report PDF is submitted separately and is not included here.
 LangGraph (orchestration); `bge-base-en-v1.5` (embeddings); FAISS + Okapi BM25 (retrieval);
 LettuceDetect / ModernBERT (prose verification); generation via a pluggable backend —
 `llama.cpp` with Qwen2.5-3B-Instruct (Q4) locally and Cloudflare Workers AI with Llama-4-Scout-17B
-hosted. AI assistants: Claude (implementation, literature review) and OpenAI Codex (editorial
-revision of the report), disclosed per the project brief.
+hosted.
